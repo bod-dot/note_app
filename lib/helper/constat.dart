@@ -1,3 +1,4 @@
 import 'dart:ui';
 
-const KParemryColor =Color(0xff21483D);
+const kParemryColor =Color(0xff21483D);
+const  kNoteBox='notes';
