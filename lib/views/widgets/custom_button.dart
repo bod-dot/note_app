@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:note_app/helper/constat.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({super.key, this.onTop});
+  const CustomButton({super.key, this.onTop,this.isLoagding=false});
 final VoidCallback? onTop;
+final bool isLoagding;
   @override
   Widget build(BuildContext context) {
     return    InkWell(
@@ -15,7 +16,9 @@ final VoidCallback? onTop;
           color: kParemryColor,
           borderRadius: BorderRadius.circular(16)
         ),
-        child:const  Center(child: Text('Add',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.black,),),),
+        child:  Center(child: isLoagding ?const  CircularProgressIndicator(
+          color: Colors.black,
+        ):const  Text('Add',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.black,),),),
       ),
     );
   }
